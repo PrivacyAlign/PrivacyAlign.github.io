@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PrivacyAlign: Contextual Privacy Alignment for LLM Agents">
+  <title>PrivacyAlign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/site.css">
+</head>
+<body class="project-page">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PrivacyAlign: Contextual Privacy Alignment for LLM Agents</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Manveer Singh Tamber<sup>1,*</sup>,</span>
+              <span class="author-block">Abhay Puri<sup>2</sup>,</span>
+              <span class="author-block">Marc-Etienne Brunet<sup>2</sup>,</span>
+              <span class="author-block">Perouz Taslakian<sup>2</sup>,</span>
+              <span class="author-block">Jimmy Lin<sup>1</sup>,</span>
+              <span class="author-block">Spandana Gella<sup>2</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Waterloo</span>
+              <span class="author-block"><sup>2</sup>ServiceNow AI Research</span>
+            </div>
+            <div class="publication-note">
+              <sup>*</sup>Work done during internship at ServiceNow AI Research.
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX" class="external-link button is-normal is-rounded is-dark">
+                  <img class="button-logo" src="static/icons/paper.svg" alt="" aria-hidden="true">
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/ServiceNow/PrivacyAlign" class="external-link button is-normal is-rounded is-dark">
+                  <img class="button-logo" src="static/icons/huggingface.svg" alt="" aria-hidden="true">
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/ServiceNow/PrivacyAlign" class="external-link button is-normal is-rounded is-dark">
+                  <img class="button-logo" src="static/icons/github.svg" alt="" aria-hidden="true">
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img class="teaser-image" src="static/images/figure1_pAA.png" alt="Contextual privacy leakage example for an LLM agent.">
+        <h2 class="subtitle has-text-centered">
+          In our work, we study private information leakage in agentic assistants. We argue that human judgment is not merely a way to label these violations; it is part of what defines them. PrivacyAlign places human judgment at the center of agentic privacy alignment, using it both to train aligned models to make contextual disclosure decisions that respect privacy norms and to evaluate how well agents respect human privacy norms.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-plain">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The shift from conversational chatbots to agentic AI changes the privacy problem for assistants. Agents can query tools, read persistent memories, and gather private context before composing a message, filing a ticket, or taking another outward-facing action. The key question is not whether a fact is sensitive in isolation, but whether disclosing it respects the relationship, expectations, and vulnerabilities of the people affected.
+            </p>
+            <p>
+              We introduce <span class="dnerf">PrivacyAlign</span>, a benchmark and training corpus of privacy-sensitive agent scenarios paired with pairwise human preferences, per-response leak and omit annotations, and written rationales. PrivacyAlign contains 1,350 response-pair items, 3,516 retained human annotations, and 599 unique annotators. We use these annotations both to evaluate agents and to condition an LLM judge that scores on-policy completions during reinforcement learning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft section-soft-blue">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">A Dataset of Human Privacy Judgments</h2>
+            <p>
+              Each PrivacyAlign scenario contains a user instruction, a story, a tool trajectory, and persistent memories. Candidate responses are shown to annotators, who label whether each response leaks sensitive information, whether it misses task-relevant information, and which response they prefer overall.
+            </p>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-number">1,350</span>
+                <span class="stat-label">response-pair items</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">1,150 / 200</span>
+                <span class="stat-label">train / test split</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">48</span>
+                <span class="stat-label">unique toolkits</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">26</span>
+                <span class="stat-label">final action tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <figure class="figure-card">
+            <img src="static/images/annotation_site_fullview.png" alt="PrivacyAlign annotation interface.">
+            <figcaption>Annotators compare two assistant responses and label leaks, omissions, and overall preference.</figcaption>
+          </figure>
+        </div>
+        <div class="column is-half">
+          <figure class="figure-card">
+            <img src="static/images/synth_data_gen_pipeline_diagram.png" alt="PrivacyAlign synthetic data generation pipeline.">
+            <figcaption>Scenarios are generated from scratch, filtered for quality, and kept only when agents actually leak.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft section-soft-red">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Frontier Models Still Leak</h2>
+          <div class="content has-text-justified">
+            <p>
+              Frontier LLMs routinely leak sensitive details from tool results and prior memories into outbound actions. We share examples where GPT-5.5, Opus-4.7, and Gemini-3.1-Pro inappropriately leak private information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="failure-grid">
+        <article class="failure-card">
+          <img class="model-logo" src="static/icons/openai.svg" alt="" aria-hidden="true">
+          <h3>GPT-5.5: leaks internal finances in an external grant request</h3>
+          <p>
+            The funder needs the event budget, not the organization's cash position. GPT-5.5 turns internal BankManager records into external disclosure by sharing account balance and reimbursement details in the grant email.
+          </p>
+        </article>
+
+        <article class="failure-card">
+          <img class="model-logo" src="static/icons/anthropic.svg" alt="" aria-hidden="true">
+          <h3>Opus 4.7: leaks clinical details in ration logistics</h3>
+          <p>
+            The logistics officer needs household identifiers and ration priority. Opus 4.7 adds clinical malnutrition indicators, exposing stigmatizing health information that is unnecessary for arranging food distribution.
+          </p>
+        </article>
+
+        <article class="failure-card">
+          <img class="model-logo" src="static/icons/gemini.svg" alt="" aria-hidden="true">
+          <h3>Gemini 3.1 Pro: leaks safehouse and police-protection details</h3>
+          <p>
+            The user explicitly asks for only a high-level absence reason. Gemini 3.1 Pro instead reveals safehouse relocation, police protection, and the related case, turning a staffing update into a physical-safety risk.
+          </p>
+        </article>
+      </div>
+      <div class="has-text-centered section-link">
+        <a href="failures.html" class="button is-normal is-rounded is-dark">
+          <span>View Full Failure Examples</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft section-soft-green">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Annotation-Conditioned Reward Modeling</h2>
+            <p>
+              Instead of training a reward model from preference pairs alone, we condition an LLM judge on the human annotations for the same prompt. The judge sees the original task, two reference responses, and the annotators' leak labels, omit labels, preferences, and rationales. It then scores a new candidate response on two axes: whether it leaks sensitive information and whether it omits relevant non-sensitive information.
+            </p>
+            <p>
+              The candidate receives one point for avoiding leaks and one point for avoiding omissions. This keeps privacy and usefulness separate, making it easier to distinguish genuine privacy alignment from over-refusal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-plain">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">BibTeX</h2>
+          <pre class="bibtex" id="citation"><code>@misc{tamber2026privacyalign,
+  title         = {PrivacyAlign: Contextual Privacy Alignment for LLM Agents},
+  author        = {Manveer Singh Tamber and Abhay Puri and Marc-Etienne Brunet and
+                   Perouz Taslakian and Jimmy Lin and Spandana Gella},
+  year          = {2026},
+  eprint        = {XXXX.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}</code></pre>
+          <div class="has-text-centered">
+            <button class="button is-normal is-rounded is-dark" type="button" data-copy-target="citation">Copy BibTeX</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="static/js/site.js"></script>
+</body>
+</html>
