@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PrivacyAlign naive-prompting leaderboard, ranked by clean rate">
+  <title>PrivacyAlign Leaderboard</title>
+  <link rel="icon" type="image/png" href="static/images/mascot.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/site.css?v=20260618-leaderboard2">
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body compact-hero">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <p class="page-kicker"><a href="index.html">PrivacyAlign</a></p>
+            <h1 class="title is-1 publication-title">Naive Leaderboard</h1>
+            <h2 class="subtitle">
+              Leak, omit, and clean rates on the 200-item PrivacyAlign test split under naive prompting, ranked by clean rate.
+            </h2>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="index.html" class="button is-normal is-rounded is-dark">
+                  <span>Back to Project Page</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/ServiceNow/PrivacyAlign" class="button is-normal is-rounded is-dark">
+                  <img class="button-logo" src="static/icons/huggingface.svg" alt="" aria-hidden="true">
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <p class="leaderboard-intro">
+        Every model is run with the same naive agent prompt. Leak rate counts responses that disclose sensitive information, omit rate counts responses that leave out task-relevant information, and clean rate counts responses that do neither. Higher clean rate is better. Trained open-weight rows are our models.
+      </p>
+
+      <div class="leaderboard" role="table" aria-label="Naive-prompting leaderboard ranked by clean rate">
+        <div class="lb-header" role="row">
+          <span>Rank</span>
+          <span>Model</span>
+          <span>Leak %</span>
+          <span>Omit %</span>
+          <span>Clean %</span>
+        </div>
+
+        <div class="lb-row is-top" role="row">
+          <span class="lb-rank">1</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/openai.svg" alt="" aria-hidden="true"><span class="lb-name">GPT-5.5</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">23.3</span>
+          <span class="lb-metric" data-label="Omit %">18.3</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">63.2</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">2</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/anthropic.svg" alt="" aria-hidden="true"><span class="lb-name">Claude Opus 4.7</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">34.1</span>
+          <span class="lb-metric" data-label="Omit %">10.8</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">57.9</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">3</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/anthropic.svg" alt="" aria-hidden="true"><span class="lb-name">Claude Sonnet 4.6</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">28.9</span>
+          <span class="lb-metric" data-label="Omit %">17.3</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">56.9</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">4</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/openai.svg" alt="" aria-hidden="true"><span class="lb-name">GPT-5.4-mini</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">28.1</span>
+          <span class="lb-metric" data-label="Omit %">36.8</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">44.9</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">5</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/gemini.svg" alt="" aria-hidden="true"><span class="lb-name">Gemini 3.1 Pro</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">41.4</span>
+          <span class="lb-metric" data-label="Omit %">36.1</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">37.3</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">6</span>
+          <div class="lb-model"><img class="lb-logo" src="static/icons/gemini.svg" alt="" aria-hidden="true"><span class="lb-name">Gemini 3.1 Flash Lite</span><span class="lb-tag is-frontier">Frontier</span></div>
+          <span class="lb-metric" data-label="Leak %">39.2</span>
+          <span class="lb-metric" data-label="Omit %">46.0</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">35.4</span>
+        </div>
+
+        <div class="lb-row is-ours" role="row">
+          <span class="lb-rank">7</span>
+          <div class="lb-model"><span class="lb-name">Nemotron-3-Nano-4B + Ours (annotation-conditioned reward)</span><span class="lb-tag is-ours">Trained, ours</span></div>
+          <span class="lb-metric" data-label="Leak %">28.6</span>
+          <span class="lb-metric" data-label="Omit %">51.2</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">32.6</span>
+        </div>
+
+        <div class="lb-row is-ours" role="row">
+          <span class="lb-rank">8</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-8B + Ours (annotation-conditioned reward)</span><span class="lb-tag is-ours">Trained, ours</span></div>
+          <span class="lb-metric" data-label="Leak %">41.2</span>
+          <span class="lb-metric" data-label="Omit %">48.8</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">28.1</span>
+        </div>
+
+        <div class="lb-row is-ours" role="row">
+          <span class="lb-rank">9</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-4B + Ours (annotation-conditioned reward)</span><span class="lb-tag is-ours">Trained, ours</span></div>
+          <span class="lb-metric" data-label="Leak %">40.8</span>
+          <span class="lb-metric" data-label="Omit %">51.9</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">27.3</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">10</span>
+          <div class="lb-model"><span class="lb-name">Nemotron-3-Nano-4B + Ours (trained gen-RM)</span><span class="lb-tag is-other">Trained, gen-RM</span></div>
+          <span class="lb-metric" data-label="Leak %">27.8</span>
+          <span class="lb-metric" data-label="Omit %">62.4</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">26.1</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">11</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-4B + Ours (trained gen-RM)</span><span class="lb-tag is-other">Trained, gen-RM</span></div>
+          <span class="lb-metric" data-label="Leak %">35.1</span>
+          <span class="lb-metric" data-label="Omit %">60.1</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">25.8</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">12</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-8B + CI-RL</span><span class="lb-tag is-other">CI-RL</span></div>
+          <span class="lb-metric" data-label="Leak %">42.9</span>
+          <span class="lb-metric" data-label="Omit %">54.2</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">25.7</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">13</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-4B + CI-RL</span><span class="lb-tag is-other">CI-RL</span></div>
+          <span class="lb-metric" data-label="Leak %">45.2</span>
+          <span class="lb-metric" data-label="Omit %">54.4</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">24.1</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">14</span>
+          <div class="lb-model"><span class="lb-name">Nemotron-3-Nano-4B + CI-RL</span><span class="lb-tag is-other">CI-RL</span></div>
+          <span class="lb-metric" data-label="Leak %">38.3</span>
+          <span class="lb-metric" data-label="Omit %">61.5</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">21.9</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">15</span>
+          <div class="lb-model"><span class="lb-name">Nemotron-3-Nano-4B</span><span class="lb-tag is-base">Open-weight base</span></div>
+          <span class="lb-metric" data-label="Leak %">56.1</span>
+          <span class="lb-metric" data-label="Omit %">53.4</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">19.1</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">16</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-4B</span><span class="lb-tag is-base">Open-weight base</span></div>
+          <span class="lb-metric" data-label="Leak %">63.0</span>
+          <span class="lb-metric" data-label="Omit %">49.4</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">18.9</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">17</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-8B + Ours (trained gen-RM)</span><span class="lb-tag is-other">Trained, gen-RM</span></div>
+          <span class="lb-metric" data-label="Leak %">46.8</span>
+          <span class="lb-metric" data-label="Omit %">59.3</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">18.4</span>
+        </div>
+
+        <div class="lb-row" role="row">
+          <span class="lb-rank">18</span>
+          <div class="lb-model"><span class="lb-name">Qwen3-8B</span><span class="lb-tag is-base">Open-weight base</span></div>
+          <span class="lb-metric" data-label="Leak %">74.6</span>
+          <span class="lb-metric" data-label="Omit %">41.2</span>
+          <span class="lb-metric lb-clean" data-label="Clean %">13.3</span>
+        </div>
+      </div>
+
+      <p class="table-note">
+        Rates are averaged over two judges conditioned on human annotations (GPT-5.5 and Gemini 3.1 Pro, high reasoning). A response is clean when it neither leaks nor omits. Frontier models are run with high reasoning and open-weight models in thinking mode. CI-RL and gen-RM rows are reward-source ablations. See the paper for the privacy-enhanced prompting results.
+      </p>
+    </div>
+  </section>
+
+  <script src="static/js/site.js"></script>
+</body>
+</html>
