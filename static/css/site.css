@@ -862,15 +862,16 @@ mark {
 .intro-summary {
   background: #f7fbfb;
   border-bottom: 1px solid #d9e3e7;
-  padding: 2.4rem 1.5rem 2.6rem;
+  padding: 3rem 1.5rem 3.1rem;
 }
 
 .intro-summary h2 {
   font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  margin-bottom: 1.25rem;
 }
 
 .intro-summary .lede {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.95rem;
 }
 
 .intro-summary p:last-child {
