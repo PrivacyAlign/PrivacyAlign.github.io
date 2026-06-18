@@ -859,6 +859,24 @@ mark {
   scroll-margin-top: 1rem;
 }
 
+.intro-summary {
+  background: #f7fbfb;
+  border-bottom: 1px solid #d9e3e7;
+  padding: 2.4rem 1.5rem 2.6rem;
+}
+
+.intro-summary h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+}
+
+.intro-summary .lede {
+  margin-bottom: 0.8rem;
+}
+
+.intro-summary p:last-child {
+  margin-bottom: 0;
+}
+
 .article-grid {
   display: block;
   max-width: 860px;
@@ -899,6 +917,21 @@ mark {
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 1.5rem 0;
+}
+
+.annotation-figures {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.interface-detail-shot img {
+  max-height: none;
+  width: 100%;
+}
+
+.annotation-note-pair {
+  grid-template-columns: 1fr;
 }
 
 .annotation-callout {

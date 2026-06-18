@@ -65,6 +65,20 @@
   </header>
 
   <main>
+    <section class="intro-summary" aria-label="Project summary">
+      <div class="container article-grid">
+        <article class="article-copy">
+          <h2>At a Glance</h2>
+          <p class="lede">
+            PrivacyAlign puts human judgment at the center of privacy alignment for LLM agents.
+          </p>
+          <p>
+            We study when agents leak private information from tools and memory into outward-facing actions. PrivacyAlign pairs synthetic agent scenarios with human judgments about leaks, omissions, and preferences, then uses those annotations for both evaluation and annotation-conditioned training. The key idea is that privacy alignment is normative and context-dependent: human judgments help define what appropriate disclosure means.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section class="article-section" id="thesis">
       <div class="container article-grid">
         <article class="article-copy">
@@ -192,11 +206,17 @@
           <p>
             Annotators read the scenario, the user instruction, and two candidate final actions. For each response, they mark whether it leaks sensitive information and whether it omits relevant non-sensitive information. They also choose which response they prefer overall and explain why.
           </p>
-          <div class="figure-pair">
-            <figure class="figure-card interface-shot">
-              <img src="static/images/annotation_site_fullview.png" alt="PrivacyAlign annotation interface.">
-              <figcaption>The annotation interface captures response-level leak and omit labels, pairwise preference, and written rationale.</figcaption>
+          <div class="annotation-figures">
+            <figure class="figure-card interface-detail-shot">
+              <img src="static/images/annotation_site_itemdetails_and_pref.png" alt="PrivacyAlign annotation interface showing scenario details, candidate responses, leak and omit labels, and preference selection.">
+              <figcaption>Annotators compare two candidate responses and mark leaks, omissions, and overall preference.</figcaption>
             </figure>
+            <figure class="figure-card interface-detail-shot">
+              <img src="static/images/annotation_site_explanationbox.png" alt="PrivacyAlign annotation interface showing a written rationale box.">
+              <figcaption>They also write a short rationale explaining the privacy tradeoff.</figcaption>
+            </figure>
+          </div>
+          <div class="figure-pair annotation-note-pair">
             <aside class="annotation-callout">
               <div>
                 <h3>Humans stay in the loop.</h3>
