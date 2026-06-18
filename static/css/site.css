@@ -1220,10 +1220,24 @@ mark {
 
   .hero-layout {
     display: block;
+    width: 100%;
   }
 
   .hero-copy {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 680px;
     text-align: center;
+  }
+
+  .hero-title-row {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .hero-identity {
+    width: 100%;
   }
 
   .paper-hero .publication-title {
@@ -1233,11 +1247,41 @@ mark {
   }
 
   .paper-hero .publication-links {
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 340px;
+    width: 100%;
   }
 
   .paper-hero .button {
+    box-sizing: border-box;
+    min-height: 2.75rem;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .compact-hero .publication-links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 340px;
+    width: 100%;
+  }
+
+  .compact-hero .link-block {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .compact-hero .button {
+    box-sizing: border-box;
+    white-space: normal;
     width: 100%;
   }
 
