@@ -1215,7 +1215,10 @@ mark {
 
 @media (max-width: 860px) {
   .paper-hero {
-    padding: 3rem 1rem 2.4rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 251, 251, 0.98) 100%),
+      url("../images/privacy-flow-alt-a.png") center top / auto 220px no-repeat;
+    padding: 1.65rem 1rem 1.9rem;
   }
 
   .hero-layout {
@@ -1231,6 +1234,7 @@ mark {
   }
 
   .hero-title-row {
+    gap: 0.75rem;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -1241,17 +1245,40 @@ mark {
   }
 
   .paper-hero .publication-title {
-    font-size: 2.55rem;
+    font-size: clamp(2rem, 9vw, 2.55rem);
+    line-height: 1.06;
     margin-left: auto;
     margin-right: auto;
+    max-width: 560px;
+  }
+
+  .paper-hero .publication-authors {
+    font-size: 0.98rem;
+    gap: 0.15rem 0.55rem;
+    line-height: 1.45;
+    margin-top: 0.7rem;
+  }
+
+  .publication-affiliations {
+    font-size: 0.9rem;
+    gap: 0.25rem 0.65rem;
+    line-height: 1.35;
+  }
+
+  .paper-hero .publication-note {
+    font-size: 0.82rem;
+    margin-top: 0.55rem;
   }
 
   .paper-hero .publication-links {
     align-items: center;
-    flex-direction: column;
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-left: auto;
     margin-right: auto;
-    max-width: 340px;
+    margin-top: 1.15rem;
+    max-width: 390px;
     width: 100%;
   }
 
@@ -1357,11 +1384,14 @@ mark {
   .hero-mascot-wrap {
     justify-content: center;
     margin-top: 0;
+    order: -1;
     transform: none;
   }
 
   .hero-mascot-minimal {
-    width: 190px;
+    border-radius: 22px;
+    padding: 0.35rem;
+    width: 112px;
   }
 
   .columns {
@@ -1390,7 +1420,7 @@ mark {
   }
 
   .article-section {
-    padding: 3rem 1rem;
+    padding: 2.6rem 1rem;
   }
 
   .article-grid {
@@ -1401,6 +1431,76 @@ mark {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .floating-toc {
+    padding: 1.25rem 1rem 1.35rem;
+  }
+
+  .floating-toc h2 {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.7rem;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .toc-grid {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    max-width: none;
+    overflow-x: auto;
+    padding: 0 1rem 0.2rem;
+    scroll-snap-type: x proximity;
+  }
+
+  .toc-grid a {
+    background: #eef7f7;
+    border: 1px solid #c9e1e4;
+    border-radius: 999px;
+    color: #17252e;
+    flex: 0 0 auto;
+    font-size: 0.88rem;
+    min-height: 0;
+    padding: 0.42rem 0.72rem;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  .intro-summary {
+    padding: 2.25rem 1rem 2.4rem;
+  }
+
+  .intro-summary h2,
+  .article-copy h2 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .article-copy p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .article-copy .lede {
+    font-size: 1.14rem;
+  }
+
+  .stat-box {
+    padding: 0.95rem 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.65rem;
+  }
+
+  .result-strip,
+  .training-card,
+  .failure-card,
+  .figure-card,
+  .annotation-callout {
+    border-radius: 7px;
+  }
+
   .has-text-justified {
     text-align: left;
   }
@@ -1408,7 +1508,12 @@ mark {
 
 @media (max-width: 520px) {
   .paper-hero .publication-title {
-    font-size: 2.1rem;
+    font-size: 2rem;
+  }
+
+  .paper-hero .publication-links {
+    grid-template-columns: 1fr;
+    max-width: 310px;
   }
 
   .prominent-stats {
