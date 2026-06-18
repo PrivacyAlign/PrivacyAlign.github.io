@@ -1432,39 +1432,7 @@ mark {
   }
 
   .floating-toc {
-    padding: 1.25rem 1rem 1.35rem;
-  }
-
-  .floating-toc h2 {
-    font-size: 0.92rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.7rem;
-    text-align: left;
-    text-transform: uppercase;
-  }
-
-  .toc-grid {
-    display: flex;
-    gap: 0.5rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    max-width: none;
-    overflow-x: auto;
-    padding: 0 1rem 0.2rem;
-    scroll-snap-type: x proximity;
-  }
-
-  .toc-grid a {
-    background: #eef7f7;
-    border: 1px solid #c9e1e4;
-    border-radius: 999px;
-    color: #17252e;
-    flex: 0 0 auto;
-    font-size: 0.88rem;
-    min-height: 0;
-    padding: 0.42rem 0.72rem;
-    scroll-snap-align: start;
-    white-space: nowrap;
+    display: none;
   }
 
   .intro-summary {
