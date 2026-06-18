@@ -14,9 +14,22 @@ Open `index.html` in a browser to view it locally.
 
 ## Deployment (GitHub Pages)
 
-These files are served from the **`gh-pages`** branch at the repo root, so the
-page is published at `https://servicenow.github.io/PrivacyAlign/`. Enable Pages
-for the `gh-pages` branch (root) in the repository settings.
+This is a self-contained static site: GitHub Pages can serve it directly from
+the repository root. The `.nojekyll` file tells GitHub Pages not to run Jekyll.
+
+To publish it as the organization site at `https://PrivacyAlign.github.io/`:
+
+1. Create a repository under the `PrivacyAlign` GitHub organization named
+   `PrivacyAlign.github.io`.
+2. Push the contents of this directory to that repository. The site should live
+   at the repository root, with `index.html` at the top level.
+3. In the GitHub repository settings, open **Pages** and set the source to the
+   branch containing these files, usually `main` or `gh-pages`, served from
+   `/ (root)`.
+
+If you instead create a normal project repository under the organization, such
+as `PrivacyAlign/project-page`, GitHub Pages will publish it at
+`https://PrivacyAlign.github.io/project-page/` rather than the root domain.
 
 ## Remaining placeholders
 
